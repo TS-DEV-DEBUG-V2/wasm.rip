@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>wasm.rip</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="lowkey"></div>
+    <nav>
+      <div class="container">
+        <span>wasm</span>
+        <div class="links">
+          <a href="#members">members</a>
+          <a href="#games">games</a>
+          <a href="#about">about</a>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <h1>wasm.rip</h1>
+       <section class="group-section" id="members">
+  <h2>members</h2>
+  <div class="group-grid">
+
+    <a class="group-memb" href="https://github.com/Deformed-steve" target="_blank">
+      <img src="img/dude.webp" />
+      <span>dude.</span>
+    </a>
+
+    <a class="group-memb" href="https://github.com/shayderrr" target="_blank">
+      <img src="https://github.com/shayderrr.png" />
+      <span>shayder</span>
+    </a>
+
+    <a class="group-memb" href="https://github.com/woahhcrackers" target="_blank">
+      <img src="https://github.com/woahhcrackers.png" />
+      <span>crackers</span>
+    </a>
+
+    <a class="group-memb" href="https://github.com/q8j-dev" target="_blank">
+      <img src="https://github.com/q8j-dev.png" />
+      <span>q8j.</span>
+    </a>
+
+    <a class="group-memb" href="https://github.com/cirsius" target="_blank">
+      <img src="https://github.com/cirsius.png" />
+      <span>cirsius</span>
+    </a>
+
+    <a class="group-memb" href="https://github.com/NotRexed" target="_blank">
+      <img src="img/rexed.webp" />
+      <span>NotRexed</span>
+    </a>
+
+    <a class="group-memb" href="https://github.com/SomeRandomFella" target="_blank">
+      <img src="img/plank.webp" />
+      <span>sexyplankton</span>
+    </a>
+
+    <a class="group-memb" href="https://github.com/a1pl" target="_blank">
+      <img src="img/sansuke.png" />
+      <span>sunsuke</span>
+    </a>
+
+    <a class="group-memb" href="https://github.com/gurtmuncher" target="_blank">
+      <img src="img/rimuru.png" />
+      <span>gurtmuncher</span>
+    </a>
+
+    <a class="group-memb" href="https://github.com/reeyuki" target="_blank">
+      <img src="img/reeyuki.png" />
+      <span>reeyuki</span>
+    </a>
+     <a class="group-memb" href="https://github.com/imt00dizzy" target="_blank">
+      <img src="img/dizzy.png" />
+      <span>dizzy</span>
+
+    <a class="group-memb" href="https://github.com/darkdragonzxs" target="_blank">
+      <img src="https://github.com/darkdragonzxs.png" />
+      <span>zxs</span>
+    </a>
+
+  </div>
+</section>
+        <section class="group-section" id="games">
+          <h2>games</h2>
+          <div class="game-grid"></div>
+        </section>
+
+        <section class="group-section" id="about">
+          <h2>about us</h2>
+          <p class="about-text">
+            a group of people on the internet, porting games, emulators, or
+            tools
+          </p>
+        </section>
+      </div>
+    </main>
+
+
+
+    <script>
+      const gameHolder = document.querySelector(".game-grid");
+
+      fetch("games.json")
+        .then((res) => res.json())
+        .then((games) => {
+          const sorted = games.sort((a, b) =>
+            a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
+          );
+
+          let showing = false;
+
+          // the urge to just use innerhtml instead of ts
+
+          const renderGames = (list) => {
+            gameHolder.innerHTML = "";
+            list.forEach((game) => {
+              const gameThing = document.createElement("div");
+              gameThing.classList.add("game-card");
+
+              const gameImage = document.createElement("img");
+              gameImage.src = game.imageUrl;
+
+              const gameInfo = document.createElement("div");
+              gameInfo.classList.add("game-info");
+
+              const gameTitle = document.createElement("span");
+              gameTitle.classList.add("game-title");
+              gameTitle.textContent = game.name;
+
+              const gamePorter = document.createElement("span");
+              gamePorter.classList.add("game-desc"); // not rlly a desc but wtv(sexyplankton) -- maybe add one later? todolist prob ( shayder )
+              gamePorter.textContent = `port by ${game.porter}`;
+
+              gameInfo.appendChild(gameTitle);
+              gameInfo.appendChild(gamePorter);
+              gameThing.appendChild(gameImage);
+              gameThing.appendChild(gameInfo);
+
+              gameThing.addEventListener("click", () => {
+                window.open(game.gameUrl, "_blank");
+              });
+
+              gameHolder.appendChild(gameThing);
+            });
+          };
+
+          const columns = getComputedStyle(gameHolder).gridTemplateColumns.split(" ").length;
+          const initialCount = columns * 2;
+
+          renderGames(sorted.slice(0, initialCount));
+
+          if (sorted.length > initialCount) {
+            const showBtn = document.createElement("button");
+            showBtn.textContent = "show all";
+            showBtn.classList.add("show-all-btn");
+            gameHolder.after(showBtn);
+
+            showBtn.addEventListener("click", () => {
+              if (!showing) {
+                renderGames(sorted);
+                showBtn.textContent = "show less";
+                showing = true;
+              } else {
+                renderGames(sorted.slice(0, initialCount));
+                showBtn.textContent = "show all";
+                showing = false;
+              }
+            });
+          }
+        })
+        .catch(() => {
+          alert("hi, games failed to load, either someone fucked something up or idk");
+        });
+    
+    </script>
+
+    <footer>
+      <div class="container">
+        <a href="https://github.com/wasm-rip">github</a> |
+        <a href="https://discord.gg/uubyGYPHQw">discord</a>
+        <div class="copyright">
+          © 2026 wasm.rip (hi guys its me crackers i made this site! &
+          sexyplankton) 
+      </div>
+    </footer>
+  </body>
+</html>
