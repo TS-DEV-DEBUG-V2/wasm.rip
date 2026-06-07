@@ -145,5 +145,12 @@
     "gameUrl": "files/wtl/index.html",
     "imageUrl": "img/wtl.jpg",
     "porter": "dasher"
+  },
+  {
+    "id": 23,
+    "name": "The Adventures Of Sir Kicksalot",
+    "gameUrl": "files/sirkicksalot/index.html",
+    "imageUrl": "img/sirkicksalot.jpg",
+    "porter": "turg"
   }
 ]
