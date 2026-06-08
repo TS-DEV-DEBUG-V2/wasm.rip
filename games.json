@@ -138,12 +138,5 @@
     "gameUrl": "files/aoc/index.html",
     "imageUrl": "img/aoc.png",
     "porter": "sexyplankton"
-  },
-  {
-    "id": 22,
-    "name": "while True: learn()",
-    "gameUrl": "files/wtl/index.html",
-    "imageUrl": "img/wtl.jpg",
-    "porter": "dasher"
   }
 ]
