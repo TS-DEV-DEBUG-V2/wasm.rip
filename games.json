@@ -138,5 +138,12 @@
     "gameUrl": "files/aoc/index.html",
     "imageUrl": "img/aoc.png",
     "porter": "sexyplankton"
+  },
+  {
+    "id": 22,
+    "name": "Plauge Inc",
+    "gameUrl": "files/plauge/index.html",
+    "imageUrl": "img/plauge.png",
+    "porter": "reeyuki"
   }
 ]
