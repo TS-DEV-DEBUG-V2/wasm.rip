@@ -152,5 +152,12 @@
     "gameUrl": "files/sirkicksalot/index.html",
     "imageUrl": "img/sirkicksalot.png",
     "porter": "turg"
+  },
+    {
+    "id": 24,
+    "name": "Plauge Inc",
+    "gameUrl": "files/plauge/index.html",
+    "imageUrl": "img/plauge.png",
+    "porter": "reeyuki"
   }
 ]
