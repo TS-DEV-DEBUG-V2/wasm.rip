@@ -4,7 +4,8 @@
     "name": "Bendy and the Ink Machine",
     "gameUrl": "files/BATIM/index.html",
     "imageUrl": "img/batim.png",
-    "porter": "crackers & slqnt"
+    "porter": "crackers & slqnt",
+    "featured": true
   },
   {
     "id": 2,
@@ -32,7 +33,8 @@
     "name": "Cuphead",
     "gameUrl": "files/cuphead/index.html",
     "imageUrl": "img/cuphead.png",
-    "porter": "crackers"
+    "porter": "crackers",
+    "featured": true
   },
   {
     "id": 6,
@@ -53,7 +55,8 @@
     "name": "One Shot: World Machine Edition",
     "gameUrl": "files/oneshot-wme/index.html",
     "imageUrl": "img/oneshot.jpg",
-    "porter": "shayder"
+    "porter": "shayder",
+    "featured": true
   },
   {
     "id": 9,
@@ -67,7 +70,8 @@
     "name": "Stardew Valley",
     "gameUrl": "files/stardewvalley/index.html",
     "imageUrl": "img/star.jpg",
-    "porter": "cirsius"
+    "porter": "cirsius",
+    "featured": true
   },
   {
     "id": 11,
@@ -102,7 +106,8 @@
     "name": "Azahar",
     "gameUrl": "files/Azahar/index.html",
     "imageUrl": "img/aza.png",
-    "porter": "sexyplankton"
+    "porter": "sexyplankton",
+    "featured": true
   },
   {
     "id": 17,
@@ -123,14 +128,16 @@
     "name": "Inscryption",
     "gameUrl": "files/inscryption/index.html",
     "imageUrl": "img/insc.png",
-    "porter": "reeyuki"
+    "porter": "reeyuki",
+    "featured": true
   },
   {
     "id": 20,
     "name": "Lobotomy Corporation",
     "gameUrl": "files/lob-corp/index.html",
     "imageUrl": "img/lob-corp.png",
-    "porter": "reeyuki"
+    "porter": "reeyuki",
+    "featured": true
   },
   {
     "id": 21,
@@ -141,9 +148,9 @@
   },
   {
     "id": 22,
-    "name": "while True: learn()",
+    "name": "While True: Learn()",
     "gameUrl": "files/wtl/index.html",
-    "imageUrl": "img/wtl.jpg",
+    "imageUrl": "img/wtl.png",
     "porter": "dasher"
   },
   {
@@ -153,7 +160,7 @@
     "imageUrl": "img/sirkicksalot.png",
     "porter": "turg"
   },
-    {
+  {
     "id": 24,
     "name": "Plauge Inc",
     "gameUrl": "files/plauge/index.html",
