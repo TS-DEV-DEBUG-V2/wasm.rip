@@ -1,3 +1,4 @@
+<!-- why does it say everything was made by notrexed  img/screenshot.png -->
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +14,7 @@
         <span>wasm</span>
         <div class="links">
           <a href="#members">members</a>
-          <a href="#games">games</a>
+          <a href="#featured">ports</a>
           <a href="#about">about</a>
         </div>
       </div>
@@ -82,11 +83,19 @@
       <span>turg</span>
     </a>
 
+    <a class="group-memb" href="https://github.com/dashiellbenton" target="_blank">
+      <img src="img/dasherimg.png" />
+      <span>dasher</span>
+    </a>
+
   </div>
 </section>
-        <section class="group-section" id="games">
-          <h2>games</h2>
-          <div class="game-grid"></div>
+        <section class="group-section" id="featured">
+          <div class="section-header">
+            <h2>featured ports</h2>
+            <button class="show-all-btn" id="toggle-all-ports">show all ports</button>
+          </div>
+          <div class="game-grid featured-grid"></div>
         </section>
 
         <section class="group-section" id="about">
@@ -102,21 +111,25 @@
 
 
     <script>
-      const gameHolder = document.querySelector(".game-grid");
+      const featuredHolder = document.querySelector(".featured-grid");
+      const toggleBtn = document.querySelector("#toggle-all-ports");
 
       fetch("games.json")
         .then((res) => res.json())
         .then((games) => {
-          const sorted = games.sort((a, b) =>
-            a.name.localeCompare(b.name, undefined, { sensitivity: "base" })
-          );
+          const byName = (a, b) =>
+            a.name.localeCompare(b.name, undefined, { sensitivity: "base" });
 
-          let showing = false;
+          const featured = games.filter((g) => g.featured).sort(byName);
+          const rest = games.filter((g) => !g.featured).sort(byName);
+          const sorted = [...featured, ...rest];
+
+          let showingAll = false;
 
           // the urge to just use innerhtml instead of ts
 
-          const renderGames = (list) => {
-            gameHolder.innerHTML = "";
+          const renderInto = (holder, list) => {
+            holder.innerHTML = "";
             list.forEach((game) => {
               const gameThing = document.createElement("div");
               gameThing.classList.add("game-card");
@@ -144,33 +157,18 @@
                 window.open(game.gameUrl, "_blank");
               });
 
-              gameHolder.appendChild(gameThing);
+              holder.appendChild(gameThing);
             });
           };
 
-          const columns = getComputedStyle(gameHolder).gridTemplateColumns.split(" ").length;
-          const initialCount = columns * 2;
+          renderInto(featuredHolder, featured);
 
-          renderGames(sorted.slice(0, initialCount));
-
-          if (sorted.length > initialCount) {
-            const showBtn = document.createElement("button");
-            showBtn.textContent = "show all";
-            showBtn.classList.add("show-all-btn");
-            gameHolder.after(showBtn);
-
-            showBtn.addEventListener("click", () => {
-              if (!showing) {
-                renderGames(sorted);
-                showBtn.textContent = "show less";
-                showing = true;
-              } else {
-                renderGames(sorted.slice(0, initialCount));
-                showBtn.textContent = "show all";
-                showing = false;
-              }
-            });
-          }
+          toggleBtn.addEventListener("click", () => {
+            showingAll = !showingAll;
+            renderInto(featuredHolder, showingAll ? sorted : featured);
+            toggleBtn.textContent = showingAll ? "show featured" : "show all ports";
+            document.querySelector("#featured h2").textContent = showingAll ? "all ports" : "featured ports";
+          });
         })
         .catch(() => {
           alert("hi, games failed to load, either someone fucked something up or idk");
@@ -180,7 +178,7 @@
 
     <footer>
       <div class="container">
-        <a href="https://github.com/wasm-rip">github</a> |
+        <a href="https://github.com/wasmdotrip">github</a> |
         <a href="https://discord.gg/uubyGYPHQw">discord</a>
         <div class="copyright">
           © 2026 wasm.rip (hi guys its me crackers i made this site! &

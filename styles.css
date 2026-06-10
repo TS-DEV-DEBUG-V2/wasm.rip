@@ -68,6 +68,22 @@ h1 {
   border-bottom: 1px solid #333;
   padding-bottom: 12px;
 }
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #333;
+  padding-bottom: 12px;
+  margin-bottom: 33px;
+}
+.section-header h2 {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.section-header .show-all-btn {
+ margin: 0 ;
+}
 .group-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 125px);
@@ -77,7 +93,6 @@ h1 {
   text-align: center;
   font-size: 16px;
 }
-
 .group-memb img {
   width: 100px;
   height: 100px;
@@ -167,7 +182,6 @@ footer a {
 footer a:hover {
   color: #fff;
 }
-
 .show-all-btn {
   display: block;
   background-color: #111;
