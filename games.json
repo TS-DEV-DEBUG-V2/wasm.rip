@@ -141,6 +141,20 @@
   },
   {
     "id": 22,
+    "name": "while True: learn()",
+    "gameUrl": "files/wtl/index.html",
+    "imageUrl": "img/wtl.jpg",
+    "porter": "dasher"
+  },
+  {
+    "id": 23,
+    "name": "The Adventures Of Sir Kicksalot",
+    "gameUrl": "files/sirkicksalot/index.html",
+    "imageUrl": "img/sirkicksalot.png",
+    "porter": "turg"
+  },
+    {
+    "id": 24,
     "name": "Plauge Inc",
     "gameUrl": "files/plauge/index.html",
     "imageUrl": "img/plauge.png",
