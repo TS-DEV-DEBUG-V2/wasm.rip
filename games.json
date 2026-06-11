@@ -171,7 +171,7 @@
     "id": 25,
     "name": "Trombone Champ",
     "gameUrl": "files/tchamp/index.html",
-    "imageUrl": "img/tchamp.png",
+    "imageUrl": "img/tchamp/img.png",
     "porter": "gurtmuncher"
   }
 ]
