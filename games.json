@@ -166,5 +166,12 @@
     "gameUrl": "files/plauge/index.html",
     "imageUrl": "img/plauge.png",
     "porter": "reeyuki"
+  },
+  {
+    "id": 25,
+    "name": "Trombone Champ",
+    "gameUrl": "files/tchamp/index.html",
+    "imageUrl": "img/tchamp.png",
+    "porter": "gurtmuncher"
   }
 ]
