@@ -12,7 +12,8 @@
     "name": "MiSide",
     "gameUrl": "files/miside/miside.html",
     "imageUrl": "img/miside.jpg",
-    "porter": "crackers"
+    "porter": "crackers",
+    "featured": true
   },
   {
     "id": 3,
@@ -182,5 +183,13 @@
     "imageUrl": "img/granny3.png",
     "porter": "crax",
     "featured": true
-  }
+  },
+  {
+    "id": 27,
+    "name": "PEAK",
+    "gameUrl": "files/peak/PEAK.html",
+    "imageUrl": "img/peak.png",
+    "porter": "dasher",
+    "featured": true
+  },
 ]
